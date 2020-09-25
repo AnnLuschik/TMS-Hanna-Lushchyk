@@ -13,7 +13,7 @@ describe('Destructuring arrays makes shorter code', () => {
     });
     it('swap two variables, in one operation', () => {
       let [x, y] = ['ax', 'why'];
-      [x, y] = [x, y];
+      [x, y] = [y, x];
       assert.deepEqual([x, y], ['why', 'ax']);
     });
     it('leading commas', () => {
