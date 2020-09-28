@@ -26,7 +26,7 @@ describe('Destructure objects', () => {
   });
   describe('interesting', () => {
     it('missing refs become undefined', () => {
-      const {z} = {x: 1, z: 2};
+      const {z} = {x: 1};
       assert.equal(z, void 0);
     });
     it('destructure from builtins (string)', () => {
