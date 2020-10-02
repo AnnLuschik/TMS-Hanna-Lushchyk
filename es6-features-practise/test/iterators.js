@@ -136,7 +136,7 @@ describe('A simple iterable without items inside, implementing the right protoco
       assert.equal(values, '');
     });
     it('has no `.length` property', function() {
-      const hasLengthProperty = iterable;
+      const hasLengthProperty = Boolean(iterable.length);
       assert.equal(hasLengthProperty, false);
     });
     describe('can be converted to an array', function() {
