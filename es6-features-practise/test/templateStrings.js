@@ -66,7 +66,9 @@ line3`;
   describe('and expressions inside work too', function() {
     var x = 42;
     it('like simple variables', function() {
-      var multiline = `line 1 $ {x}`;
+	  var multiline = `line 1
+
+      ${x}`;
 
       assert.equal(multiline, 'line 1\n\n      42');
     });
