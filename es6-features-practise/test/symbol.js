@@ -67,7 +67,7 @@ describe('`Symbol.for` for registering Symbols globally', function() {
       });
       it('but the symbols are not the same!', function() {
         const symbol1 = Symbol.for('new symbol');
-        const symbol2 = Symbol.for('new symbol');
+        const symbol2 = Symbol('new symbol');
         assert.notEqual(symbol1, symbol2);
       });
     });    
