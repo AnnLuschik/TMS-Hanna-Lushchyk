@@ -62,7 +62,7 @@ describe('`Symbol.for` for registering Symbols globally', function() {
     describe('NOTE: the description of two different symbols', function() {
       it('might be the same', function() {
         const symbol1AsString = Symbol('new symbol 1').toString();
-        const symbol2AsString = Symbol.for('new symbol').toString();
+        const symbol2AsString = Symbol.for('new symbol 1').toString();
         assert.equal(symbol1AsString, symbol2AsString);
       });
       it('but the symbols are not the same!', function() {
