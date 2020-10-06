@@ -12,4 +12,8 @@ class Car {
 	getFullName() {
 		return `${this.name} ${this.model}`;
 	}
+
+	getAge() {
+		return new Date().getFullYear() - this.year;
+	}
 }
