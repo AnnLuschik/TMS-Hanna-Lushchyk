@@ -16,4 +16,13 @@ class Car {
 	getAge() {
 		return new Date().getFullYear() - this.year;
 	}
+
+	changeColor(color) {
+		if(this.color === color) {
+			alert(`This car already is ${color}`);
+		} else {
+			this.color = color;
+			alert(`Now this car is ${this.color}`);
+		}
+	}
 }
