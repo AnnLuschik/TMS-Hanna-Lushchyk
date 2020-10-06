@@ -8,4 +8,8 @@ class Car {
 		this.fuelCapacity = fuelCapacity;
 		this.fuelConsumption = fuelConsumption;
 	}
+
+	getFullName() {
+		return `${this.name} ${this.model}`;
+	}
 }
