@@ -19,10 +19,22 @@ class Car {
 
 	changeColor(color) {
 		if(this.color === color) {
-			alert(`This car already is ${color}`);
+			console.log(`This car already is ${color}`);
 		} else {
 			this.color = color;
-			alert(`Now this car is ${this.color}`);
+			console.log(`Now this car is ${this.color}`);
+		}
+	}
+
+	calculateWay(kilometers, fuel) {
+		if(fuel < 10) {
+			console.log('There is not enough fuel, you need to refuel the car');
+		}
+		let travelTime = kilometers / this.maxSpeed;
+		let requiredFuel = kilometers / 100 * this.fuelConsumption;
+		console.log(`A car travels ${kilometers} km in ${travelTime} hours`);
+		if(requiredFuel < fuel) {
+			console.log(`A car needs ${requiredFuel} for this distance, you need to refuel ${Math.ceil((requiredFuel - fuel) / this.fuelCapacity)} times`);
 		}
 	}
 }
