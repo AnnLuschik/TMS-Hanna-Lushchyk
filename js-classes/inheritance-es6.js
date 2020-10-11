@@ -110,7 +110,7 @@ class Lexus extends Car {
 }
 
 class Volkswagen extends Car {
-	constructor( trunkCapacity = 460, {
+	constructor( trunkCapacity, {
 		name, 
 		model, 
 		year, 
@@ -126,6 +126,8 @@ class Volkswagen extends Car {
 	set trunkCapacity(value) {
 		if(value >=0 && value <= 460) {
 			this._trunkCapacity = value;
+		} else {
+			this._trunkCapacity = 460;
 		}
 	}
 
