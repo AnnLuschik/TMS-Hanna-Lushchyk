@@ -99,7 +99,7 @@ class Lexus extends Car {
 	}
 
 	changeClimateControl() {
-		if(climateControl) {
+		if(this.climateControl) {
 			this.climateControl = false;
 			console.log('Climate control is turned off.');
 		} else {
