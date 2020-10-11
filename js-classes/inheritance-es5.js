@@ -114,3 +114,21 @@ Lexus.prototype.changeClimateControl = function() {
 		console.log('Climate control is turned on.');
 	}
 }
+
+let lexus = new Lexus(true, {
+	name: 'Lexus', 
+	model: 'LS 430', 
+	year: 2002, 
+	color: 'white', 
+	maxSpeed: 250, 
+	fuelCapacity: 84, 
+	fuelConsumption: 12,
+});
+
+console.log(lexus.getFullName());
+console.log(lexus.getAge());
+lexus.changeColor('white');
+lexus.changeColor('yellow');
+lexus.calculateWay(120, 10);
+lexus.changeClimateControl(false);
+lexus.changeClimateControl(true);
