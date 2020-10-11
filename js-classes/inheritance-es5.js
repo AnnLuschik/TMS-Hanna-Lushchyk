@@ -164,3 +164,21 @@ Volkswagen.prototype.putPotatoesInTheTrunk = function(bag) {
 		console.log(`You can put just ${Math.floor(this.trunkCapacity / 40)} bags of potatoes in the trunk.`);
 	}
 }
+
+let volkswagen = new Volkswagen(1000, {
+	name: 'Volkswagen', 
+	model: 'Passat', 
+	year: 2018,
+	color: 'black', 
+	maxSpeed: 180, 
+	fuelCapacity: 25, 
+	fuelConsumption: 10,
+});
+
+console.log(volkswagen.getFullName());
+console.log(volkswagen.getAge());
+volkswagen.changeColor('black');
+volkswagen.changeColor('blue');
+volkswagen.calculateWay(500, 5);
+volkswagen.putPotatoesInTheTrunk(5);
+volkswagen.putPotatoesInTheTrunk(10);
