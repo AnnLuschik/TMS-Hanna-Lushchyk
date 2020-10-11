@@ -36,3 +36,33 @@ Car.prototype.calculateWay = function(kilometers, fuel) {
 		console.log(`A car needs ${requiredFuel} L. for this distance, you need to refuel ${Math.ceil((requiredFuel - fuel) / this.fuelCapacity)} times`);
 	}
 }
+
+function Toyota(hybridSynergyDrive, battery, {name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption}) {
+	Car.call(this, {name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption});
+	this.hybridSynergyDrive = hybridSynergyDrive;
+	this.battery = battery;
+}
+
+Toyota.prototype = Object.create(Car.prototype);
+Toyota.prototype.constructor = Toyota;
+
+Object.defineProperty(Toyota.prototype, 'battery', {
+	set(value) {
+		if(value >=0 && value <=100) {
+			this._battery = value;
+		}
+	},
+
+	get() {
+		return this._battery;
+	}
+});
+
+Toyota.prototype.chargeBattery = function(value) {
+	if(value > this.battery) {
+		this.battery = value;
+		console.log(`Now battery is ${this.battery}%`);
+	} else {
+		console.log(`Battery is ${this.battery}%`);
+	}
+}
