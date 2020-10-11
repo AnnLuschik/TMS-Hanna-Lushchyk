@@ -84,3 +84,33 @@ toyota.changeColor('red');
 toyota.calculateWay(300, 20);
 toyota.chargeBattery(120);
 toyota.chargeBattery(100);
+
+function Lexus(climateControl, {name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption}) {
+	Car.call(this, {name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption});
+	this.climateControl = climateControl;
+}
+
+Lexus.prototype = Object.create(Car.prototype, {
+	climateControl: {
+		get() {
+			return this._climateControl;
+		},
+	
+		set(value) {
+			if(typeof value === 'boolean') {
+				this._climateControl = value;
+			}
+		}
+	}
+});
+Lexus.prototype.constructor = Lexus;
+
+Lexus.prototype.changeClimateControl = function() {
+	if(this.climateControl) {
+		this.climateControl = false;
+		console.log('Climate control is turned off.');
+	} else {
+		this.climateControl = true;
+		console.log('Climate control is turned on.');
+	}
+}
