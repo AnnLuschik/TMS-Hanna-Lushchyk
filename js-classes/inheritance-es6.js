@@ -108,3 +108,44 @@ class Lexus extends Car {
 		}
 	}
 }
+
+class Volkswagen extends Car {
+	constructor( trunkCapacity = 460, {
+		name, 
+		model, 
+		year, 
+		color, 
+		maxSpeed, 
+		fuelCapacity, 
+		fuelConsumption
+	}) {
+		super({name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption});
+		this.trunkCapacity = trunkCapacity;
+	}
+
+	set trunkCapacity(value) {
+		if(value >=0 && value <= 460) {
+			this._trunkCapacity = value;
+		}
+	}
+
+	get trunkCapacity() {
+		return this._trunkCapacity;
+	}
+
+	putPotatoesInTheTrunk(bag) {
+		if((bag * 40) <= this.trunkCapacity) {
+			this.trunkCapacity -= bag * 40;
+			if(bag > 1) {
+				console.log(`You put ${bag} bags of potatoes in the trunk.`);
+			} else if (bag === 1) {
+				console.log(`You put ${bag} bag of potatoes in the trunk.`);
+			} else {
+				console.log(`You did'nt put potatoes in the trunk.`);
+			}
+			
+		} else {
+			console.log(`You can put just ${Math.floor(this.trunkCapacity / 40)} bags in the trunk.`);
+		}
+	}
+}
