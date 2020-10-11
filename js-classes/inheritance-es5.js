@@ -132,3 +132,35 @@ lexus.changeColor('yellow');
 lexus.calculateWay(120, 10);
 lexus.changeClimateControl(false);
 lexus.changeClimateControl(true);
+
+Volkswagen.prototype = Object.create(Car.prototype, {
+	trunkCapacity: {
+		get() {
+			return this._trunkCapacity;
+		},
+		set(value) {
+			if(value >=0 && value <= 460) {
+				this._trunkCapacity = value;
+			} else {
+				this._trunkCapacity = 460;
+			}
+		}
+	}
+});
+Volkswagen.prototype.constructor = Volkswagen;
+
+Volkswagen.prototype.putPotatoesInTheTrunk = function(bag) {
+	if((bag * 40) <= this.trunkCapacity) {
+		this.trunkCapacity -= bag * 40;
+		if(bag > 1) {
+			console.log(`You put ${bag} bags of potatoes in the trunk.`);
+		} else if (bag === 1) {
+			console.log(`You put ${bag} bag of potatoes in the trunk.`);
+		} else {
+			console.log(`You did'nt put potatoes in the trunk.`);
+		}
+		
+	} else {
+		console.log(`You can put just ${Math.floor(this.trunkCapacity / 40)} bags of potatoes in the trunk.`);
+	}
+}
