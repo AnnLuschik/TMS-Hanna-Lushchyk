@@ -43,20 +43,20 @@ function Toyota(hybridSynergyDrive, battery, {name, model, year, color, maxSpeed
 	this.battery = battery;
 }
 
-Toyota.prototype = Object.create(Car.prototype);
-Toyota.prototype.constructor = Toyota;
-
-Object.defineProperty(Toyota.prototype, 'battery', {
-	set(value) {
-		if(value >=0 && value <=100) {
-			this._battery = value;
+Toyota.prototype = Object.create(Car.prototype, {
+	battery: {
+		set(value) {
+			if(value >=0 && value <=100) {
+				this._battery = value;
+			}
+		},
+	
+		get() {
+			return this._battery;
 		}
-	},
-
-	get() {
-		return this._battery;
 	}
 });
+Toyota.prototype.constructor = Toyota;
 
 Toyota.prototype.chargeBattery = function(value) {
 	if(value > this.battery) {
