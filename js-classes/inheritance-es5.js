@@ -66,3 +66,21 @@ Toyota.prototype.chargeBattery = function(value) {
 		console.log(`Battery is ${this.battery}%`);
 	}
 }
+
+let toyota = new Toyota(true, 10, {
+	name: 'Toyota', 
+	model: 'Prius', 
+	year: 2010, 
+	color: 'gray', 
+	maxSpeed: 160, 
+	fuelCapacity: 43, 
+	fuelConsumption: 5,
+});
+
+console.log(toyota.getFullName());
+console.log(toyota.getAge());
+toyota.changeColor('gray');
+toyota.changeColor('red');
+toyota.calculateWay(300, 20);
+toyota.chargeBattery(120);
+toyota.chargeBattery(100);
