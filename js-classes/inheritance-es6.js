@@ -187,3 +187,21 @@ lexus.changeColor('yellow');
 lexus.calculateWay(120, 10);
 lexus.changeClimateControl(false);
 lexus.changeClimateControl(true);
+
+let volkswagen = new Volkswagen(1000, {
+	name: 'Volkswagen', 
+	model: 'Passat', 
+	year: 2018,
+	color: 'black', 
+	maxSpeed: 180, 
+	fuelCapacity: 25, 
+	fuelConsumption: 10,
+});
+
+console.log(volkswagen.getFullName());
+console.log(volkswagen.getAge());
+volkswagen.changeColor('black');
+volkswagen.changeColor('blue');
+volkswagen.calculateWay(500, 5);
+volkswagen.putPotatoesInTheTrunk(5);
+volkswagen.putPotatoesInTheTrunk(10);
