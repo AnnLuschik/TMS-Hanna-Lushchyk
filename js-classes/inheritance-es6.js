@@ -1,5 +1,5 @@
 class Car {
-	constructor(name, model, year, color, maxSpeed, fuelCapacity = 60, fuelConsumption = 10) {
+	constructor({name, model, year, color, maxSpeed, fuelCapacity = 60, fuelConsumption = 10}) {
 		this.name = name;
 		this.model = model;
 		this.year = year;
