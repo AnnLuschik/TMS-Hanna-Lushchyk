@@ -73,3 +73,38 @@ class Toyota extends Car {
 		}
 	}
 }
+
+class Lexus extends Car {
+	constructor(climateControl, {
+		name, 
+		model, 
+		year, 
+		color, 
+		maxSpeed, 
+		fuelCapacity, 
+		fuelConsumption
+	}) {
+		super({name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption});
+		this.climateControl = climateControl;
+	}
+
+	set climateControl(value) {
+		if(typeof value === 'boolean') {
+			this._climateControl = value;
+		}
+	}
+
+	get climateControl() {
+		return this._climateControl;
+	}
+
+	changeClimateControl() {
+		if(climateControl) {
+			this.climateControl = false;
+			console.log('Climate control is turned off.');
+		} else {
+			this.climateControl = true;
+			console.log('Climate control is turned on.');
+		}
+	}
+}
