@@ -38,3 +38,38 @@ class Car {
 		}
 	}
 }
+
+class Toyota extends Car {
+	constructor(hybridSynergyDrive, battery, {
+		name, 
+		model, 
+		year, 
+		color, 
+		maxSpeed, 
+		fuelCapacity, 
+		fuelConsumption
+	}) {
+		super({name, model, year, color, maxSpeed, fuelCapacity, fuelConsumption});
+		this.hybridSynergyDrive = hybridSynergyDrive;
+		this.battery = battery;
+	}
+
+	set battery(value) {
+		if(value >=0 && value <=100) {
+			this._battery = value;
+		}
+	}
+
+	get battery() {
+		return this._battery;
+	}
+
+	chargeBattery(value) {
+		if(value > this.battery) {
+			this.battery = value;
+			console.log(`Now battery is ${this.battery}%`);
+		} else {
+			console.log(`Battery is ${this.battery}%`);
+		}
+	}
+}
