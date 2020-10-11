@@ -30,8 +30,8 @@ class Car {
 		if(fuel < 10) {
 			console.log('There is not enough fuel, you need to refuel the car');
 		}
-		let travelTime = kilometers / this.maxSpeed;
-		let requiredFuel = kilometers / 100 * this.fuelConsumption;
+		let travelTime = Math.round(kilometers / this.maxSpeed * 10) / 10;
+		let requiredFuel = Math.round(kilometers / 100 * this.fuelConsumption * 10) / 10;
 		console.log(`A car travels ${kilometers} km in ${travelTime} hours`);
 		if(requiredFuel > fuel) {
 			console.log(`A car needs ${requiredFuel} for this distance, you need to refuel ${Math.ceil((requiredFuel - fuel) / this.fuelCapacity)} times`);
