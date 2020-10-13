@@ -4,6 +4,8 @@ const clearButton = document.querySelector('#clear');
 
 const table = document.querySelector('#tbody');
 
+const map = document.querySelector('#map');
+
 let cityMap = new Map();
 
 function renderTableRow() {
@@ -29,6 +31,10 @@ function renderTableRow() {
 function getWeather(city) {
 	return fetch(`http://api.weatherstack.com/current?access_key=cc3f94caaf8feef30483bb3e706b17e8&query=${city}`)
 	.then(response => response.json());
+}
+
+function getLocation(lat, lon) {
+	map.src = `https://maps.locationiq.com/v2/staticmap?key=pk.d89054d8b17b55dfd7691554b7652a5a&center=${lat},${lon}&size=400x400&zoom=14&markers=${lat},${lon}|icon:large-red-cutout;&format=png`;
 }
 
 form.addEventListener('submit', function(event) {

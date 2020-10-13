@@ -1,3 +1,9 @@
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
 .tableData {
     border: 2px solid grey;
     border-spacing: unset;
@@ -59,4 +65,8 @@ input.input {
 
 input:focus {
     outline: none;
+}
+
+#map {
+	margin: 20px auto 0;
 }
