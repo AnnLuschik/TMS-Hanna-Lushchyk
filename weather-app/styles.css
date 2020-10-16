@@ -46,7 +46,8 @@ thead {
     min-width: 65px;
     font-family: cursive;
     font-size: 16px;
-    cursor: pointer;
+	cursor: pointer;
+	outline: none;
 }
 
 .button:hover {
