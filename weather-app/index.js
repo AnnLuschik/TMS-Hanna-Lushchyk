@@ -79,7 +79,10 @@ function showDataFromStorage() {
 	let keys = Object.keys(localStorage);
 	for(let key of keys) {
 		getWeather(key)
-		.then(result => showWeatherData(result));
+		.then(result => {
+			localStorage.setItem(key, JSON.stringify(result));
+			showWeatherData(result);
+		});
 	}
 }
 
