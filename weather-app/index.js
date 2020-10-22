@@ -54,17 +54,8 @@ function showLocationMap(lat, lon) {
 	map.src = `https://maps.locationiq.com/v2/staticmap?key=pk.d89054d8b17b55dfd7691554b7652a5a&center=${lat},${lon}&size=400x400&zoom=14&markers=${lat},${lon}|icon:large-red-cutout;&format=png`;
 }
 
-function getLocationName({coords: {latitude: lat, longitude: lon}}) {
-	return fetch(`https://eu1.locationiq.com/v1/reverse.php?key=pk.d89054d8b17b55dfd7691554b7652a5a&lat=${lat}&lon=${lon}&format=json&accept-language=en`)
-	.then(response => response.json())
-	.then(result => result.address.city);
-}
-
 function getWeatherByCoords({coords: {latitude: lat, longitude: lon}}) {
-	fetch(`https://eu1.locationiq.com/v1/reverse.php?key=pk.d89054d8b17b55dfd7691554b7652a5a&lat=${lat}&lon=${lon}&format=json&accept-language=en`)
-	.then(response => response.json())
-	.then(result => result.address.city)
-	.then(city => getWeather(city))
+	getWeather(lat, lon)
 	.then(response => {
 		localStorage.setItem(response.location.name, JSON.stringify(response));
 		showWeatherData(response)
