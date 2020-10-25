@@ -10,6 +10,29 @@ const myWeatherButton = document.querySelector('#my-weather');
 let cityMap = new Map();
 
 
+window.addEventListener('load', () => {
+	showDataFromStorage();
+});
+
+
+form.addEventListener('submit', function(event) {
+
+	event.preventDefault();
+
+	getWeather(findInput.value)
+	.then(result => showWeatherData(result, cityMap));
+
+	findInput.value = '';
+});
+
+
+myWeatherButton.addEventListener('click', () => {
+	getWeatherForMyLocation();
+});
+
+
+clearButton.addEventListener('click', clearTable);
+
 
 function getWeatherByCoords({coords: {latitude: lat, longitude: lon}}) {
 	getWeather(lat, lon)
@@ -36,27 +59,3 @@ function showDataFromStorage() {
 		});
 	}
 }
-
-
-window.addEventListener('load', () => {
-	showDataFromStorage();
-});
-
-
-myWeatherButton.addEventListener('click', () => {
-	getWeatherForMyLocation();
-});
-
-
-form.addEventListener('submit', function(event) {
-
-	event.preventDefault();
-
-	getWeather(findInput.value)
-	.then(result => showWeatherData(result, cityMap));
-
-	findInput.value = '';
-});
-
-
-clearButton.addEventListener('click', clearTable);
