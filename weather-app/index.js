@@ -1,4 +1,5 @@
 import { clearTable, showWeatherData } from './dom-service'
+import { getWeather } from './data-service'
 
 const findInput = document.querySelector('#input');
 
@@ -9,10 +10,6 @@ const myWeatherButton = document.querySelector('#my-weather');
 let cityMap = new Map();
 
 
-function getWeather(city) {
-	return fetch(`http://api.weatherstack.com/current?access_key=cc3f94caaf8feef30483bb3e706b17e8&query=${city}`)
-	.then(response => response.json());
-}
 
 function getWeatherByCoords({coords: {latitude: lat, longitude: lon}}) {
 	getWeather(lat, lon)
@@ -50,6 +47,7 @@ myWeatherButton.addEventListener('click', () => {
 	getWeatherForMyLocation();
 });
 
+
 form.addEventListener('submit', function(event) {
 
 	event.preventDefault();
@@ -59,5 +57,6 @@ form.addEventListener('submit', function(event) {
 
 	findInput.value = '';
 });
+
 
 clearButton.addEventListener('click', clearTable);
