@@ -35,7 +35,8 @@ clearButton.addEventListener('click', clearTable);
 
 
 function getWeatherByCoords({coords: {latitude: lat, longitude: lon}}) {
-	getWeather(lat, lon)
+	const query =  `${lat}, ${lon}`
+	getWeather(query)
 	.then(response => {
 		localStorage.setItem(response.location.country, JSON.stringify(response));
 		showWeatherData(response, cityMap)
