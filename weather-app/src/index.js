@@ -15,12 +15,12 @@ window.addEventListener('load', () => {
 });
 
 
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', function (event) {
 
 	event.preventDefault();
 
 	getWeather(findInput.value)
-	.then(result => showWeatherData(result, cityMap));
+		.then(result => showWeatherData(result, cityMap));
 
 	findInput.value = '';
 });
@@ -34,13 +34,13 @@ myWeatherButton.addEventListener('click', () => {
 clearButton.addEventListener('click', clearTable);
 
 
-function getWeatherByCoords({coords: {latitude: lat, longitude: lon}}) {
-	const query =  `${lat}, ${lon}`
+function getWeatherByCoords({ coords: { latitude: lat, longitude: lon } }) {
+	const query = `${lat}, ${lon}`
 	getWeather(query)
-	.then(response => {
-		localStorage.setItem(response.location.country, JSON.stringify(response));
-		showWeatherData(response, cityMap)
-	});
+		.then(response => {
+			localStorage.setItem(response.location.country, JSON.stringify(response));
+			showWeatherData(response, cityMap)
+		});
 }
 
 function getWeatherForMyLocation() {
@@ -49,14 +49,14 @@ function getWeatherForMyLocation() {
 
 function showDataFromStorage() {
 	let keys = Object.keys(localStorage);
-	for(let key of keys) {
-		if(key = 'loglevel:webpack-dev-server') {
+	for (let key of keys) {
+		if (key = 'loglevel:webpack-dev-server') {
 			return;
 		}
 		getWeather(key)
-		.then(result => {
-			localStorage.setItem(key, JSON.stringify(result));
-			showWeatherData(result, cityMap);
-		});
+			.then(result => {
+				localStorage.setItem(key, JSON.stringify(result));
+				showWeatherData(result, cityMap);
+			});
 	}
 }
