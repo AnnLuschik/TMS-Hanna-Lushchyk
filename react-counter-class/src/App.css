@@ -1,0 +1,28 @@
+.container {
+    width: 300px;
+    height: 300px;
+    border: 1px solid grey;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+}
+  
+.buttons-panel {
+    display: flex;
+    flex-direction: row;
+}
+  
+.decrement {
+	background-color: #DC3545;
+	color: #ffffff;
+}
+  
+.reset {
+	background-color: #FFC107;  
+	color: #212529;  
+}
+  
+.increment {
+	background-color: #28A745;    
+	color: #ffffff; 
+}
