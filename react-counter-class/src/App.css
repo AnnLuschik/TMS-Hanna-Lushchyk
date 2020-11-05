@@ -25,17 +25,6 @@
     flex-direction: row;
 }
   
-.button {
-    display: flex;
-    width: 100px;
-	height: 100px;  
-	font-weight: 600;
-	font-size: 38px;
-	border: none;
-	cursor: pointer;
-	outline: none;
-}
-  
 .decrement {
 	background-color: #DC3545;
 	color: #ffffff;
