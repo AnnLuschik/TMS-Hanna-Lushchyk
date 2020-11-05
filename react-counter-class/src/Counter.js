@@ -1,9 +1,9 @@
 import React from 'react';
-import './Counter.css'
+import styles from './Counter.module.css'
 
 export function Counter({ value }) {
 	return (
-		<div className='counter center'>{value}</div>
+		<div className={`${styles.counter} ${styles.center}`}>{value}</div>
 	);
 }
 

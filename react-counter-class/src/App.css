@@ -7,19 +7,6 @@
     flex-direction: column;
 }
   
-.center {
-     justify-content: center;
-     align-items: center;
-}
-    
-.counter {
-    display: flex;
-	flex: 1; 
-	font-size: 70px;
-	color: #6C757D;
-	background-color: #F8F9FA;
-}
-  
 .buttons-panel {
     display: flex;
     flex-direction: row;
