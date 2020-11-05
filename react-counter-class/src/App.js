@@ -1,7 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
-import Button from './Button'
-import Counter from './Counter'
+import Button from './Button';
+import Counter from './Counter';
+
 
 
 function App() {
@@ -13,11 +14,11 @@ function App() {
 
 			<div className='buttons-panel'>
 
-				<Button role='increment' onClick={() => setValue(value + 1)}>+</Button>
+				<Button className='increment' onClick={() => setValue(value + 1)}>+</Button>
 
-				<Button role='reset' onClick={() => setValue(0)}>&#10227;</Button>
+				<Button className='reset' onClick={() => setValue(0)}>&#10227;</Button>
 
-				<Button role='decrement' onClick={() => setValue(value - 1)}>–</Button>
+				<Button className='decrement' onClick={() => setValue(value - 1)}>–</Button>
 			</div>
 		</div>
 	);

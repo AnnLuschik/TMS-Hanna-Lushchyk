@@ -3,10 +3,10 @@ import styles from './Button.module.css';
 
 
 
-function Button({ role, onClick, children }) {
+function Button({ className, onClick, children }) {
 
 	return (
-		<button className={`${styles.button} ${styles.center} ${role}`} onClick={onClick}>{children}</button>
+		<button className={`${styles.button} ${styles.center} ${className}`} onClick={onClick}>{children}</button>
 	);
 }
 
