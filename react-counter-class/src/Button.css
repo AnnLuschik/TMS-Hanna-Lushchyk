@@ -1,0 +1,15 @@
+.button {
+    display: flex;
+    width: 100px;
+	height: 100px;  
+	font-weight: 600;
+	font-size: 38px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+}
+
+.center {
+	justify-content: center;
+	align-items: center;
+}
