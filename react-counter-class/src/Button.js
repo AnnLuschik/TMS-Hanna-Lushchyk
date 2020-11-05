@@ -1,10 +1,12 @@
 import React from 'react';
-import './Button.css'
+import styles from './Button.module.css';
+
+
 
 function Button({ role, onClick, children }) {
 
 	return (
-		<button className={'button center ' + role} onClick={onClick}>{children}</button>
+		<button className={`${styles.button} ${styles.center} ${role}`} onClick={onClick}>{children}</button>
 	);
 }
 
