@@ -1,0 +1,1 @@
+export { showWeatherData, clearTable } from './domService'
