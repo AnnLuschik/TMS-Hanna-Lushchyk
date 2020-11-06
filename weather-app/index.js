@@ -1,5 +1,5 @@
-import { clearTable, showWeatherData } from './dom-service'
-import { getWeather } from './data-service'
+import { clearTable, showWeatherData } from './src/dom-service'
+import { getWeather } from './src/data-service'
 
 const findInput = document.querySelector('#input');
 
