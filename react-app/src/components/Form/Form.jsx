@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import styles from './styles.module.css';
 
 export function Form({ buttonText, onChange, onSubmit }) {
@@ -17,6 +17,10 @@ export function Form({ buttonText, onChange, onSubmit }) {
   const showInputText = useCallback(() => {
     onChange(value);
   }, [onChange, value]);
+
+  useEffect(() => {
+    showInputText();
+  }, [showInputText]);
 
   return (
     <form className={styles.container} onChange={showInputText} onSubmit={onSubmitForm}>

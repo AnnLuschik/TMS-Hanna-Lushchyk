@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import {
   Form, BoxContainer, Box, store,
 } from './components';
@@ -9,7 +9,9 @@ export function App() {
 
   const showFilteredData = useCallback((text) => {
     setFilteredData(store.filter((item) => item.includes(text)));
+  }, []);
 
+  useEffect(() => {
     if (filteredData.length) {
       setButtonText('Find');
     } else {
